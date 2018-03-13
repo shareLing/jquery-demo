@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>后台左侧菜单制作</title>
+	<script type="text/javascript" src="../js/jquery-1.6.2.min.js"></script>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		body{font-size: 12px;padding: 100px;font-family: '宋体';}
+		.box{width: 500px;border-bottom:1px solid #ccc;}
+		.box h1{height: 30px;line-height: 30px;padding: 0 10px;font-size: 12px;border:1px solid #ccc;border-bottom: none;cursor: pointer;background:#eee url(../img/bg.gif)no-repeat right -27px;}
+		.box h1.hover{background-color: #e3e2e2;}
+		.box h1.active{background-position: right 7px;}
+		.box p{padding:10px;border-left:1px solid #ccc;border-right:1px solid #ccc;}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h1>标题一</h1>
+		<p>内容</p>
+		<h1>标题二</h1>
+		<p>内容</p>
+		<h1>标题三</h1>
+		<p>内容</p>
+		<h1>标题四</h1>
+		<p>内容</p>
+		<h1>标题五</h1>
+		<p>内容</p>
+	</div>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//除了了第一个其它都不显示
+		//$('.box p:not(:first)').hide();
+		$('.box p:gt(0)').hide();
+		$('.box h1').hover(function(){
+			$(this).addClass('hover');
+		},function(){
+			$(this).removeClass('hover');
+
+		});
+
+		$('.box h1:first').addClass('active');
+
+		$('.box h1').click(function(){
+			$(this).toggleClass('active').siblings('h1').removeClass('active');
+			$(this).next('p').slideToggle().siblings('p').slideUp();
+		})
+	});
+</script>
+</html>

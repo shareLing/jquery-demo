@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>弹出层效果</title>
+	<script type="text/javascript" src="../js/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.easydrag.handler.beta2.js"></script>
+	<style type="text/css">
+		*{padding: 0;margin:0;}
+		body{font-size: 12px;padding:100px;}
+		.box_all{float: left;padding:5px;background-color: #eee;display: none;}
+		.box{width: 500px;border:1px solid #4c7ebd;}
+		.box h1{height: 30px;line-height: 30px;font-size:14px;background-color: #87b0e1;padding-left: 10px;color: #fff;}
+		.box span{float:right;padding-right: 10px;cursor:pointer;display: block;height: 30px;width: 30px;background: url(../img/close.jpg) no-repeat;}
+		.box span:hover{background: url(../img/close_hover.jpg)no-repeat;}
+		.box p{padding:10px;background-color: #fff;border:3px solid #eee;height: 400px;}
+	</style>
+</head>
+<body>
+<p>点击弹出层</p>
+<div class="box_all">
+	<div class="box">
+	<h1>标题<span><a href="#"></a></span></h1>
+	<p>显示内容</p>
+</div>
+</div>
+
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('p').click(function(){
+			$('.box_all').show();
+		});
+		$('span').click(function(){
+			$('.box_all').hide();
+		});
+
+		$('.box_all').easydrag();
+
+	});
+</script>
+</html>

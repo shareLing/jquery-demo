@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>鼠标点击时弹出对话框</title>
+	<script type="text/javascript" src="../js/jquery-1.6.2.min.js"></script>
+</head>
+<body>
+<a href="#">点击弹出对话框</a>
+<br><br>
+<input type="text" name="text">
+<input type="text" name="text">
+<input type="text" name="text">
+<input type="text" name="text">
+<input type="text" name="text">
+
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('a').click(function(){
+			alert("点击后弹出的对话框内容");
+		});
+		//first表示第一个文本框可以弹出对话框，last表示最后一个，eq（1）表示第几个弹出，gt（1）表示除了1前面的都可以弹出（gt、eq都是从0开始算的 even奇数行弹出，odd偶数行弹出）
+		$('input:text:first').click(function(){
+			alert("文本框弹出显示内容");
+		});
+
+
+	});
+</script>
+</html>

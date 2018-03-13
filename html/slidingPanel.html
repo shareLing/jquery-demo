@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../js/jquery-1.6.2.min.js"></script>
+	
+	<style type="text/css">
+		*{margin: 0;padding:0;}
+		body{font-size: 12px;}
+		a{text-decoration: none;color: #000;font-style: "宋体"}
+		.box{width: 500px;margin: 0 auto;}
+		.one{height: 200px;background:url(../img/1.jpg);display: none;}
+		.box p{border-top:5px solid #ccc;background: url(../img/1.gif)no-repeat center top; }
+		.box p.hover{background: url(../img/3.gif)no-repeat center top;}
+		.box p a{display: block;width: 140px;height: 40px;line-height: 40px;background:url(../img/2.gif)no-repeat right -45px;margin: 0 auto;text-align: center;font-size: 14px;font-weight: bold;padding-right: 10px;}
+		.box p a.active{background-position: right 12px;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="one"></div>
+		<p><a href="#">菜 单</a></p>
+	</div>
+	
+</body>
+<script type="text/javascript">
+		$(document).ready(function(){
+			$('.box p a').click(function(){
+				$('.one').slideToggle('slow');
+				$(this).toggleClass('active');
+			});
+			$('.box p').hover(function(){
+					$(this).addClass('hover');
+			},function(){
+					$(this).removeClass('hover');
+			});
+		});
+	</script>
+</html>
